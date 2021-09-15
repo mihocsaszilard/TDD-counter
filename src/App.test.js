@@ -62,4 +62,12 @@ describe("Counter testing", () => {
     const expected = { disabled: true };
     expect(wrapper.find("#decrement-btn").props()).toMatchObject(expected);
   });
+
+  test("render background color", () => {
+    wrapper.find("#aqua").simulate("click");
+    expect(wrapper.find(".counterContainer").prop("style")).toHaveProperty(
+      "backgroundColor",
+      "aqua"
+    );
+  });
 });
